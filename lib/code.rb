@@ -34,7 +34,13 @@ class Code
   end
 
   def num_exact_matches(guess)
-   guess.pegs.count {|ele| @pegs.index(ele) == guess.pegs.index(ele)}
+   counter = 0
+   (0...guess.pegs.size).each do |i|
+      if guess.pegs[i] == @pegs[i]
+        counter += 1
+      end
+   end
+   counter
   end
 
   def num_near_matches(guess)

@@ -137,7 +137,7 @@ describe "Code" do
       end
 
       it "should return the number of pegs in the guess that are the correct color but incorrect position compared to @pegs" do
-        expect(code.num_near_matches(Code.new(["B", "R", "Y", "Y"]))).to eq(2) #["R", "G", "R", "B"]
+        expect(code.num_near_matches(Code.new(["B", "R", "Y", "Y"]))).to eq(2)
       end
 
       it "should not include exact matches" do
