@@ -18,7 +18,9 @@ class Code
   end
 
   def self.random(length)
-    new_code = Code.new(Array.new(length, POSSIBLE_PEGS.keys[rand(length)]))
+    random_pegs = []
+    length.times {random_pegs << POSSIBLE_PEGS.keys.sample}
+    Code.new(random_pegs)
   end
 
   def self.from_string(pegs)
