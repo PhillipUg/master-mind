@@ -1,44 +1,39 @@
 class Code
-  attr_reader :pegs
+  attr_reader :letters
 
-  POSSIBLE_PEGS = {
-    "R" => :red,
-    "G" => :green,
-    "B" => :blue,
-    "Y" => :yellow
-  }
-
-  def self.valid_pegs?(array)
-    array.map!(&:upcase) if array.all?(&:downcase)
-    array.all? {|char| POSSIBLE_PEGS.keys.include?(char)}
+  POSSIBLE_LETTERS = %w( A B C D)
+  
+  def initialize(array)
+    Code.valid_letters?(array) ? @letters = array.map(&:upcase) : raise("error, letters invalid")
   end
 
-  def initialize(array)
-    Code.valid_pegs?(array) ? @pegs = array.map(&:upcase) : raise("error, pegs invalid")
+  def self.valid_letters?(array)
+    array.map!(&:upcase) if array.all?(&:downcase)
+    array.all? {|char| POSSIBLE_LETTERS.include?(char)}
   end
 
   def self.random(length)
-    random_pegs = []
-    length.times {random_pegs << POSSIBLE_PEGS.keys.sample}
-    Code.new(random_pegs)
+    random_letters = []
+    length.times {random_letters << POSSIBLE_LETTERS.sample}
+    Code.new(random_letters)
   end
 
-  def self.from_string(pegs)
-    Code.new(pegs.split(""))
+  def self.from_string(letters)
+    Code.new(letters.split(""))
   end
 
   def [](index)
-    @pegs[index]
+    @letters[index]
   end
 
   def length
-    @pegs.size
+    @letters.size
   end
 
   def num_exact_matches(guess)
    counter = 0
-   (0...guess.pegs.size).each do |i|
-      if guess.pegs[i] == @pegs[i]
+   (0...guess.letters.size).each do |i|
+      if guess.letters[i] == @letters[i]
         counter += 1
       end
    end
@@ -47,8 +42,8 @@ class Code
 
   def num_near_matches(guess)
     counter = 0
-   (0...guess.pegs.size).each do |i|
-      if guess.pegs[i] != @pegs[i] && @pegs.include?(guess.pegs[i])
+   (0...guess.letters.size).each do |i|
+      if guess.letters[i] != @letters[i] && @letters.include?(guess.letters[i])
         counter += 1
       end
    end
@@ -56,6 +51,7 @@ class Code
   end
 
   def ==(other_code)
-    @pegs.eql?(other_code.pegs)
+    @letters.eql?(other_code.letters)
   end
+
 end
