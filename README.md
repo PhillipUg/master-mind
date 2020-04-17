@@ -3,7 +3,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![Run on Repl.it][replit-badge]][replit-url] 
+[![Run on Repl.it][replit-badge]][replit-url]
 <br />
 <br />
 # Mastermind
@@ -19,7 +19,7 @@ To play, enter a pattern of letters e.g. if you input '3' as the size of pattern
 
 **To try it out head over to Repl.it and simply click "RUN" (at the top of the page) to start the game, then follow the prompts in the repl.it terminal**
 <br />
-[![Run on Repl.it](https://repl.it/badge/github/PhillipUg/master-mind)](https://repl.it/github/PhillipUg/master-mind)
+[![Run on Repl.it][replit-badge]][replit-url]
 
 
 ### Built With
@@ -52,7 +52,7 @@ This project was built using:
 [issues-shield]: https://img.shields.io/github/issues/PhillipUg/master-mind.svg?style=flat-square
 [issues-url]: https://github.com/PhillipUg/master-mind/issues
 [replit-badge]: https://repl.it/badge/github/PhillipUg/master-mind
-[replit-url]: https://repl.it/github/PhillipUg/master-mind
+[replit-url]: https://repl.it/@PhillipUg/master-mind
 
 ## 📝 License
 
